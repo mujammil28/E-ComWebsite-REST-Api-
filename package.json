@@ -1,0 +1,16 @@
+{
+  "name": "e-comrestapiproject",
+  "version": "1.0.0",
+ 
+  "description": "API's for E-com Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type":"module",
+  "author": "mujammil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

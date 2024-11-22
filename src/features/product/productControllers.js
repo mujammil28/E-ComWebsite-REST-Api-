@@ -1,7 +1,12 @@
+import productModel from './productModel.js'
+
 export default class productController{
 
-            getProduct(){
+            getProduct(req,res){
 
+                const products=productModel.getAll();
+
+                res.status(200).send(products);
             }
 
             addProduct(){

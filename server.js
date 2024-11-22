@@ -1,9 +1,8 @@
 import express from 'express';
-import * as productRouter from './src/features/product/productRouts'
-
+import router from './src/features/product/productRouts.js';
 const server=express();
 
-server.use('/api/products',productRouter)
+server.use('/api/products',router)
 
 
 server.get("/",(req,res)=>{

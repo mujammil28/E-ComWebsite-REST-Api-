@@ -1,11 +1,11 @@
 export default class userModel{
 
-        constructor(name,id,email,type){
+        constructor(name,email,password,type,id){
             this.name=name;
-            this.id=id;
             this.password=password;
             this.email=email;
             this.type=type;
+            this.id=id;
         }
 
         static signUp(name,email, password, type){
@@ -14,12 +14,13 @@ export default class userModel{
             );
             newUser.id=users.length+1;
             users.push(newUser);
+         
             return newUser;
 
         }
-        static signIn(email,password){
-            const signIn=users.find(u=>u.email===email&& u.password===password);
-            return signIn;
+        static SignIn(email,password){
+            const userSignin=users.find((u)=>u.email==email && u.password==password );
+               return userSignin;
         }
 }
 
@@ -27,6 +28,6 @@ var users=[{
     name:"seler User",
     id:1,
     password:"Pass@123",
-    email:"Sseller@1.com",
+    email:"Seller@1.com",
     type:"Seller"
-}]
+},]

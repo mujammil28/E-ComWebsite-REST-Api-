@@ -1,5 +1,5 @@
 
-import userModel from "./userModel";
+import userModel from "./userModel.js";
 export default class userController{
 
     signUp(req,res){

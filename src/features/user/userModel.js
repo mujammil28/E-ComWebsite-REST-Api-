@@ -22,9 +22,13 @@ export default class userModel{
             const userSignin=users.find((u)=>u.email==email && u.password==password );
                return userSignin;
         }
+
+        static getAll(){
+            return users;
+        }
 }
 
-var users=[{
+let users=[{
     name:"seler User",
     id:1,
     password:"Pass@123",

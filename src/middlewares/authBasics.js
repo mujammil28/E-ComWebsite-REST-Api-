@@ -9,7 +9,7 @@ const authBasic=(req,res,next)=>{
                     res.status(401).send("Authorization not found");
 
             }
-                //encoded value:[Basic wertyu2345sdfzxc23]
+                //encoded:[Basic wertyu2345sdfzxc23]
             const base64Credentials=authHeaders.replace('Basic ','');
             console.log(base64Credentials);
 

@@ -12,11 +12,12 @@ export default class productController{
             addProduct(req,res){   
 
              
+                console.log(req.body)
                 const { name, price, sizes } = req.body;
                 const newProduct = {
                   name,
                   price: parseFloat(price),
-                  sizes: sizes.split(','),
+                  sizes:sizes.split(","),
                   imageUrl: req.file.filename,
                 };
                 const createdRecord = productModel.add(

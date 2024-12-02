@@ -14,6 +14,8 @@ const jwtAuth=(req,res,next)=>{
         try{
                 const payload=jwt.verify(token,'hQxzEGZjRodpNBADkhaZ1Ou4IUCBJfY3');
                 console.log(payload)
+                req.userId=payload.UserId;
+                console.log(req.userId)
         }
         catch(err){
 

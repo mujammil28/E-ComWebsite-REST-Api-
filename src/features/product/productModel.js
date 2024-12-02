@@ -1,3 +1,5 @@
+import userModel from '../user/userModel.js'
+
 export default class productModel{
 
 
@@ -39,10 +41,45 @@ export default class productModel{
             });
             return result;
           }
-        
+          
+            static ratingProduct(userId,productId,rating){
+
+                console.log(userId)
+              const user=userModel.getAll().find((u)=>u.id===Number(userId))
+                console.log(user)
+                if(!user){
+                    return "user Not Found"
+                }
+
+                const productCheck=products.find((p)=>p.id===Number(productId))
+                if(!productCheck){
+                    return "product not found"
+                }
+
+                if(!products.rating){
+                    products.rating=[];
+                    products.rating.push({userId:userId, rating:rating});
+                }
+                    else{
+                        const existingRating=products.rating.findIndex((r)=>r.userId===userId)
+                   
+                        if(existingRating>=0){
+
+                            products.ratings[existingRating]={
+                                userId:userId,
+                                rating:rating,
+                            }
+
+                        }
+                        else{
+                            products.rating.push({userId:userId, rating:rating});
+                        }
+                        
+                   
+                    }
+
+            }
 }
-
-
 var products=[
                 new productModel(   1,
                     'Product 1',

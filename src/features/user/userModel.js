@@ -34,4 +34,10 @@ let users=[{
     password:"Pass@123",
     email:"Seller@1.com",
     type:"Seller"
-},]
+},{
+    name:"Customer User",
+    id:2,
+    password:"cus@123",
+    email:"Customer@1.com",
+    type:"Customer"
+}]

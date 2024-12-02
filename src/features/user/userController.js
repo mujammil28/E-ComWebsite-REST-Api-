@@ -21,10 +21,12 @@ export default class userController{
        return res.status(400).send("SignIn Failed")}
        else{
         
-        const token=jwt.sign(({UserId:result.id,UserEmial:result.password})
+        const token=jwt.sign(({UserId:result.id,UserPassword:result.password})
         ,'hQxzEGZjRodpNBADkhaZ1Ou4IUCBJfY3',{
             expiresIn:'1h',
         })
+
+        console.log(token)
             res.status(200).send(token);
     }
     }

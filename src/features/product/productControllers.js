@@ -25,8 +25,21 @@ export default class productController{
                 );
                 res.status(201).send(createdRecord);
             }
-            rateProduct(){
+            rateProduct(req,res){
 
+                    const userId=req.query.userId;
+                    const productId=req.query.productId;
+
+                    const rating=req.query.rating;
+
+                    const error = productModel.ratingProduct(userId, productId,rating);
+
+                    if(error){
+                        return res.status(401).send(error)
+                    }
+                    else{
+                        return res.status(200).send("Success")
+                    }
             }
 
             addOneProduct(req,res){

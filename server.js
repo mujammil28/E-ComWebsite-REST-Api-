@@ -6,6 +6,7 @@ import userRouter from './src/features/user/userRouts.js';
 import jwtAuth from './src/middlewares/jwtMiddleware.js';
 import cartRouter from './src/features/cart/cartRoutes.js';
 import loggerFunc from './src/middlewares/loggerMiddleware.js';
+import mongoConnect from './src/config/mongodb.js';
 
 
 const server=express();
@@ -22,5 +23,6 @@ server.get("/",(req,res)=>{
 })
 
 server.listen(5000,()=>{
-    console.log("server is running on localhost:5000")
+    console.log("server is running on localhost:5000");
+    mongoConnect();
 })

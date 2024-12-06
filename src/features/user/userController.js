@@ -5,11 +5,11 @@ import jwt from 'jsonwebtoken';
 
 export default class userController{
 
-    signUp(req,res){
+   async signUp(req,res){
 
             const {name,email,password,type}=req.body;
-            userModel.signUp(name,email,password,type)
-            res.status(201).send("User Created")
+            const user= await userModel.signUp(name,email,password,type)
+            res.status(201).send(user)
                 
     }
 

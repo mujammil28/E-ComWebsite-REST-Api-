@@ -6,7 +6,7 @@ import userRouter from './src/features/user/userRouts.js';
 import jwtAuth from './src/middlewares/jwtMiddleware.js';
 import cartRouter from './src/features/cart/cartRoutes.js';
 import loggerFunc from './src/middlewares/loggerMiddleware.js';
-import mongoConnect from './src/config/mongodb.js';
+import {mongoConnect} from './src/config/mongodb.js';
 
 
 const server=express();

@@ -26,9 +26,18 @@ export default class userModel{
              console.log("Database Error: ",err);
 }
         }
-        static SignIn(email,password){
-            const userSignin=users.find((u)=>u.email==email && u.password==password );
-               return userSignin;
+        static async SignIn(email,password){
+           try{
+            const db = getdb();
+            // 2. Get the collection
+            const collection = db.collection("users");
+            
+            // 3. Find the document.
+            return await collection.findOne({email, password});
+           }catch(err){
+            console.log(err);
+           }
+
         }
 
         static getAll(){

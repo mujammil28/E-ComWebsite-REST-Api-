@@ -28,7 +28,7 @@ export default class userController{
 
         console.log(token)
             res.status(200).send(token);
-    }
+          }
     }
 
 }

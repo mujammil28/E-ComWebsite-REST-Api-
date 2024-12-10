@@ -1,13 +1,19 @@
 import express from 'express';
-import catController from'./cartController.js'
+import cartController from'./cartController.js'
 
 
 const cartRouter=express.Router();
 
-const cartControl =new catController();
+const cartControl =new cartController();
 
-cartRouter.post('/',cartControl.addItem);
-cartRouter.get('/',cartControl.get)
+cartRouter.post('/',(req, res, next)=>{
+
+    cartControl.addItem(req, res, next);
+});
+cartRouter.get('/',(req, res, next)=>{
+
+    cartControl.get(req, res, next);
+})
 
 
 export default cartRouter;

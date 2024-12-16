@@ -7,7 +7,7 @@ import jwtAuth from './src/middlewares/jwtMiddleware.js';
 import cartRouter from './src/features/cart/cartRoutes.js';
 import loggerFunc from './src/middlewares/loggerMiddleware.js';
 import {mongoConnect} from './src/config/mongodb.js';
-
+import { mongooseDB } from './src/config/mongoose.js';
 
 const server=express();
 
@@ -24,5 +24,6 @@ server.get("/",(req,res)=>{
 
 server.listen(5000,()=>{
     console.log("server is running on localhost:5000");
-    mongoConnect();
+  //  mongoConnect();
+        mongooseDB();
 })

@@ -11,8 +11,9 @@ export default class userModel{
 
        static async signUp(name,email, password, type){
 
-            try{            const db=getdb();
-
+            try{           
+                 const db=getdb();
+                console.log(db)
             const collection=db.collection("users")
 
             const newUser=new userModel(
